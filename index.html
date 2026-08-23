@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="/css/styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ibn Baṭṭūṭa — The Rihla</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+</head>
+<body>
+
+<canvas id="globe-canvas"></canvas>
+
+<!-- INTRO -->
+<div class="intro" id="intro">
+  <div class="intro-ornament">☽</div>
+  <h2>Ibn Baṭṭūṭa</h2>
+  <div class="intro-arabic">رحلة ابن بطوطة</div>
+  <p>A Moroccan scholar who left Tangier in 1325 at the age of twenty-one, and did not return for twenty-nine years — having traversed the known world in a journey without parallel.</p>
+  <div class="intro-stats">
+    <div class="stat"><span class="stat-num">29</span><span class="stat-label">Years</span></div>
+    <div class="stat"><span class="stat-num">75,000</span><span class="stat-label">Miles</span></div>
+    <div class="stat"><span class="stat-num">40+</span><span class="stat-label">Countries</span></div>
+  </div>
+  <button class="intro-btn" onclick="startJourney()">Begin the Rihla →</button>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <div class="header-title">The Rihla</div>
+    <h1>Ibn Baṭṭūṭa</h1>
+  </div>
+  <div class="header-sub">1325 – 1354 CE<br>Tangier to the World</div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#e8b84b"></div>Major stops</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#c9922a; opacity:0.5"></div>Route path</div>
+</div>
+
+<!-- STOP CARD -->
+<div class="stop-card" id="stopCard">
+  <button class="stop-card-close" onclick="closeCard()">✕</button>
+  <div class="stop-number" id="cardNumber"></div>
+  <div class="stop-name" id="cardName"></div>
+  <div class="stop-arabic" id="cardArabic"></div>
+  <div class="stop-year" id="cardYear"></div>
+  <div class="stop-illustration" id="cardIllustration"></div>
+  <div class="stop-description" id="cardDescription"></div>
+  <div class="stop-quote" id="cardQuote">
+    <p id="cardQuoteText"></p>
+    <cite>— Rihla, Ibn Baṭṭūṭa</cite>
+  </div>
+</div>
+
+<!-- TOOLTIP -->
+<div class="globe-tooltip" id="tooltip"></div>
+
+<!-- NAV -->
+<div class="nav-arrows">
+  <button class="nav-btn" onclick="prevStop()">←</button>
+  <button class="nav-btn" onclick="nextStop()">→</button>
+</div>
+
+<!-- TIMELINE -->
+<div class="timeline-bar">
+  <div class="timeline-label">
+    <span>1325</span><span>1330</span><span>1335</span><span>1340</span><span>1345</span><span>1350</span><span>1354</span>
+  </div>
+  <div class="timeline-track" id="timelineTrack" onclick="handleTimelineClick(event)">
+    <div class="timeline-fill" id="timelineFill" style="width:0%"></div>
+    <div class="timeline-stops" id="timelineStops"></div>
+  </div>
+  <div class="timeline-controls">
+    <button class="btn" id="playBtn" onclick="togglePlay()">▶ Play Journey</button>
+    <button class="btn" onclick="resetJourney()">↺ Reset</button>
+    <div class="stop-counter" id="stopCounter">Stop 1 of 20</div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="/js/app.js"></script>
+
+
+</body>
+</html>
